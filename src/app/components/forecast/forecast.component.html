@@ -1,0 +1,21 @@
+<div class="card-container">
+  <div class="row row-cols-1 row-cols-md-3 g-4"> <!-- Change row-cols-md-4 to row-cols-md-3 -->
+    <!-- Loop through FilteredArray -->
+    <div class="col" *ngFor="let city of FilteredArray">
+      <div class="card text-bg-light custom-card">
+        <div class="card-body">
+          <h5 class="card-title">{{ city.city }}</h5>
+
+          <div class="card-info">
+            <p class="card-text">Date: {{ city.forecast.date }}</p>
+            <p class="card-text">Temperature (Celsius): {{ city.forecast.temperatureCelsius }}°C</p>
+            <p class="card-text">Temperature (Fahrenheit): {{ city.forecast.temperatureFahrenheit }}°F</p>
+            <p class="card-text">Humidity: {{ city.forecast.humidity }}%</p>
+          </div>
+
+          <a [routerLink]="['/cityForecast', city.id]" class="btn btn-light">View Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

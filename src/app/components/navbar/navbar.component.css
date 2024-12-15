@@ -1,0 +1,55 @@
+/* Basic styling for the navbar */
+.navbar {
+  margin-bottom: 30px;
+  font-family: 'Arial', sans-serif;
+}
+
+.navbar .navbar-nav .nav-item {
+  padding-left: 20px;
+}
+
+.navbar .navbar-nav .nav-link {
+  font-weight: bold;
+  font-size: 18px;  /* Make the navbar text larger */
+}
+
+.navbar .navbar-brand {
+  font-weight: bold;
+  font-size: 24px;  /* Larger font for brand name */
+}
+
+/* Styling the search input */
+.search-input {
+  width: 350px;  /* Make the search box wider */
+  font-size: 18px;  /* Increase font size inside the input */
+  padding: 10px;  /* Add more padding for the input */
+  border-radius: 25px;  /* Rounded corners for search box */
+}
+
+.search-button {
+  font-size: 18px;  /* Larger button text */
+  font-weight: bold;  /* Bold button text */
+  padding: 10px 20px;  /* Increase padding for the button */
+  border-radius: 25px;  /* Round corners for the button */
+}
+
+/* Increase font size of the search button on hover */
+.search-button:hover {
+  background-color: #0d6efd;
+  color: white;
+}
+
+/* For responsive design (on smaller screens) */
+@media (max-width: 768px) {
+  .search-input {
+    width: 250px;  /* Make the search box smaller on mobile */
+  }
+
+  .navbar .navbar-nav .nav-link {
+    font-size: 16px;  /* Smaller font size for navigation links on mobile */
+  }
+
+  .navbar .navbar-brand {
+    font-size: 22px;  /* Slightly smaller brand name on mobile */
+  }
+}

@@ -1,0 +1,37 @@
+<div class="city-forecast-container">
+  <div *ngIf="forecastData; else loading" class="city-card">
+    <!-- City Header -->
+    <div class="city-header">
+      <h2 class="city-name">{{ forecastData.city }}</h2>
+      <p class="city-date">{{ forecastData.forecast[0].date }}</p>
+    </div>
+
+    <!-- Current Weather Details -->
+    <div class="weather-details">
+      <div class="weather-item">
+        <h3 class="weather-label">Temperature</h3>
+        <p class="weather-value">{{ forecastData.forecast[0].temperatureCelsius }}°C / {{ forecastData.forecast[0].temperatureFahrenheit }}°F</p>
+      </div>
+      <div class="weather-item">
+        <h3 class="weather-label">Humidity</h3>
+        <p class="weather-value">{{ forecastData.forecast[0].humidity }}%</p>
+      </div>
+    </div>
+
+    <!-- 5-Day Weather Forecast -->
+    <div class="weather-forecast">
+      <div *ngFor="let forecast of forecastData.forecast" class="forecast-card">
+        <h4>{{ forecast.date }}</h4>
+        <p>{{ forecast.temperatureCelsius }}°C / {{ forecast.temperatureFahrenheit }}°F</p>
+        <p>Humidity: {{ forecast.humidity }}%</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading state -->
+  <ng-template #loading>
+    <div class="loading-message">
+      <p>Loading data...</p>
+    </div>
+  </ng-template>
+</div>
